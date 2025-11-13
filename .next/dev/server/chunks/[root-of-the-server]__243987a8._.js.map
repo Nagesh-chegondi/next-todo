@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/web-development-2/todo-app-nexti/app/api/signup/route.js"],"sourcesContent":["import { connectDB, User } from '@/lib/db';\nimport bcrypt from 'bcrypt';\n\nexport async function POST(req){\n  await connectDB();\n  const { email, password } = await req.json();\n  if(!email || !password) return new Response(JSON.stringify({ message: 'Missing fields' }), { status: 400 });\n  const exists = await User.findOne({ email });\n  if(exists) return new Response(JSON.stringify({ message: 'User exists' }), { status: 409 });\n  const hashed = await bcrypt.hash(password, 10);\n  await User.create({ email, password: hashed });\n  return new Response(JSON.stringify({ message: 'ok' }), { status: 201 });\n}\n"],"names":[],"mappings":";;;;;;;;;AACA;;;AAEO,eAAe,KAAK,GAAG;IAC5B,MAAM;IACN,MAAM,EAAE,KAAK,EAAE,QAAQ,EAAE,GAAG,MAAM,IAAI,IAAI;IAC1C,IAAG,CAAC,SAAS,CAAC,UAAU,OAAO,IAAI,SAAS,KAAK,SAAS,CAAC;QAAE,SAAS;IAAiB,IAAI;QAAE,QAAQ;IAAI;IACzG,MAAM,SAAS,MAAM,KAAK,OAAO,CAAC;QAAE;IAAM;IAC1C,IAAG,QAAQ,OAAO,IAAI,SAAS,KAAK,SAAS,CAAC;QAAE,SAAS;IAAc,IAAI;QAAE,QAAQ;IAAI;IACzF,MAAM,SAAS,MAAM,gHAAM,CAAC,IAAI,CAAC,UAAU;IAC3C,MAAM,KAAK,MAAM,CAAC;QAAE;QAAO,UAAU;IAAO;IAC5C,OAAO,IAAI,SAAS,KAAK,SAAS,CAAC;QAAE,SAAS;IAAK,IAAI;QAAE,QAAQ;IAAI;AACvE"}}]
+}

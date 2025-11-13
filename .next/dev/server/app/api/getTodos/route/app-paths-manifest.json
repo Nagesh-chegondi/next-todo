@@ -1,0 +1,3 @@
+{
+  "/api/getTodos/route": "app/api/getTodos/route.js"
+}

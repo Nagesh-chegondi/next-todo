@@ -1,0 +1,10 @@
+{
+  "/api/addTodo/route": "app/api/addTodo/route.js",
+  "/api/getTodos/route": "app/api/getTodos/route.js",
+  "/api/signin/route": "app/api/signin/route.js",
+  "/api/signup/route": "app/api/signup/route.js",
+  "/login/page": "app/login/page.js",
+  "/page": "app/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/todos/page": "app/todos/page.js"
+}
