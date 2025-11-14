@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-2xl text-center">
         <h1 className="text-5xl font-extrabold text-blue-700 mb-6">📝 TodoMaster</h1>
         <p className="text-lg text-gray-600 mb-8">
-          Organize your tasks, set goals and stay productive. Secure login using JWT.
+          Organize your tasks, set goals and stay productive. 
         </p>
         <div className="flex justify-center gap-4">
           <button
